@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carl~Biz Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Carl~Biz Hub</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#laundry">Laundry</a>
+      <a href="#juice">Fruit Juice</a>
+      <a href="#laptops">Laptops</a>
+      <a href="#fashion-men">Men's Wear</a>
+      <a href="#fashion-women">Women's Wear</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome to Carl~Biz Hub</h2>
+      <p>Your one-stop legit center for Laundry, Fruit Juice, Laptops, and Fashion.</p>
+      <button onclick="scrollToSection('laundry')">Explore</button>
+    </section>
+
+    <!-- Laundry Section -->
+    <section id="laundry">
+      <h2>Laundry Services</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="image/WhatsApp Image 2025-10-16 at 09.39.11_267c8882.jpg" alt="Laundry">
+          <p>Professional laundry with fresh scents. Fast, clean, affordable.</p>
+          <button onclick="openForm('laundryForm')">Book Laundry</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Juice Section -->
+    <section id="juice">
+      <h2>Fruit Juice Bar</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="image/WhatsApp Image 2025-10-16 at 09.45.50_feb0f1b3.jpg" alt="Juice">
+          <p>Fresh, natural, and healthy juices — made just for you!</p>
+          <button onclick="openForm('juiceForm')">Order Juice</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Laptops Section -->
+    <section id="laptops">
+      <h2>Laptop Sales</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=60" alt="Laptop">
+          <p>Top brands, great prices. Shop new & used laptops.</p>
+          <button onclick="openForm('laptopForm')">Shop Laptops</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fashion Sections -->
+    <section id="fashion-men">
+      <h2>Men's Wear</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="image/males.jpg" alt="Men Fashion">
+          <p>Stylish clothes for every occasion — men’s collection.</p>
+          <button onclick="openForm('fashionFormMen')">Shop Men's Fashion</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="fashion-women">
+      <h2>Women's Wear</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="image/ladies.jpg" alt="Women Fashion">
+          <p>Elegant clothes for every occasion — women’s collection.</p>
+          <button onclick="openForm('fashionFormWomen')">Shop Women's Fashion</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>📞 +254 792 817 553 | ✉ comp1448@gmail.com</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Carl~Biz Hub | Designed with ❤ by Elias
+  </footer>
+
+  <!-- ========= MODALS (Forms) ========= -->
+
+  <!-- Laundry Form -->
+  <div id="laundryForm" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm('laundryForm')">&times;</span>
+      <h3>Laundry Booking</h3>
+      <form id="laundryEmailForm" class="email-form">
+         <input type="hidden" name="service_type" value="Laundry">
+         <input name="name" type="text" placeholder="Your Name" required>
+         <input name="email" type="email" placeholder="Your Email" required>
+         <input name="phone" type="tel" placeholder="Phone Number" required>
+         <input name="location" type="text" placeholder="Pickup Location" required>
+         <input name="item" type="text" placeholder="Laundry Details (e.g. clothes, beddings,carpet,mat)">
+         <input type="submit" value="Send">
+       </form>
+    </div>
+  </div>
+
+  <!-- Juice Form -->
+  <div id="juiceForm" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm('juiceForm')">&times;</span>
+      <h3>Juice Order</h3>
+      <form id="juiceEmailForm" class="email-form">
+        <input type="hidden" name="service_type" value="Juice">
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <input name="location" type="text" placeholder="Location to be delivered" required>
+        <input name="juice" type="text" placeholder="Type of Juice" required>
+        <input name="quantity" type="text" placeholder="Quantity-250ml" min="250ml" required>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </div>
+
+  <!-- Laptop Form -->
+  <div id="laptopForm" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm('laptopForm')">&times;</span>
+      <h3>Laptop Inquiry</h3>
+      <form id="laptopEmailForm" class="email-form">
+        <input type="hidden" name="service_type" value="Laptop">
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <input name="details" type="text" placeholder="Model/Specs or Budget" required>
+        <input name="location" type="text" placeholder="Location to be delivered" required>
+        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </div>
+
+  <!-- Fashion Forms -->
+  <div id="fashionFormMen" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm('fashionFormMen')">&times;</span>
+      <h3>Men's Fashion Order</h3>
+      <form id="fashionEmailFormMen" class="email-form">
+        <input type="hidden" name="service_type" value="Men's Fashion">
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <input name="item" type="text" placeholder="Type of Wear" required>
+        <input name="quantity" type="number" placeholder="Quantity" min="1" required>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </div>
+
+  <div id="fashionFormWomen" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm('fashionFormWomen')">&times;</span>
+      <h3>Women's Fashion Order</h3>
+      <form id="fashionEmailFormWomen" class="email-form">
+        <input type="hidden" name="service_type" value="Women's Fashion">
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <input name="phone" type="tel" placeholder="Phone Number" required>
+        <input name="item" type="text" placeholder="Type of Wear" required>
+        <input name="quantity" type="number" placeholder="Quantity" min="1" required>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK and Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
